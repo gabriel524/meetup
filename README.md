@@ -5,11 +5,11 @@ Brief discription: This app provides a list of upcoming events for any given cit
 When first opening the app, you will be prompted to sign in with Google in order to gain access to the Google Calendar API. Then, you can specify what city and how many events to view, and click on an event to view more details!
 
 # Dependencies
-HTML5
-CSS3
-JavaScript (ES6)
-React
-API
+-HTML5
+-CSS3
+-JavaScript (ES6)
+-React
+-API
 This app used the Google Calendar API to fetch information about upcoming events by location.
 
 # A Note On Privacy.
