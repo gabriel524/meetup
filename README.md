@@ -10,7 +10,7 @@ When first opening the app, you will be prompted to sign in with Google in order
 -JavaScript (ES6)
 -React
 -API
-This app used the Google Calendar API to fetch information about upcoming events by location.
+-This app used the Google Calendar API to fetch information about upcoming events by location.
 
 # A Note On Privacy.
 The Meetup app requires you to sign in with Google in order to access the data from its Google Calendar. This access goes both ways, as Meetup can also access the user's calendar, HOWEVER it DOES NOT and will never be given this functionality. Rest assured, the app does not attempt to do anything with the Google user's information in any way. The app is also currently in the process of being verified, but this may take some time; Google has a lot on their plate.
