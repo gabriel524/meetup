@@ -75,7 +75,7 @@ Then: an error will show
 As a user I would like to see charts with the number of upcoming events in my city
 
 -Scenario 1:
-Show a chart with the number of upcoming events in each city. 
-Given: The user selected a city
-When: The user clicks on the city’s upcoming events button
-Then: A chart will list the upcoming events taking place in the city
+Show a chart with the number of upcoming events in each city.
+Given: The user selected a city.
+When: The user clicks on the city’s upcoming events button.
+Then: A chart will list all upcoming events taking place in the city.
