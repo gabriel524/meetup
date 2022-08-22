@@ -1,4 +1,4 @@
-## meetup
+## meetup Test Scenarios
 Brief discription: This app work by providing a list of upcoming events for any given city, with data provided by Google Calendar which will be use,the app works offline using cached data from the last time it was used online. Why using the app, user can search for events in a specific city or browse all events, customize how many events are shown on screen, click an event for more details, and see how many events are upcoming in certain cities.
 
 ## How to Use This App.
@@ -76,6 +76,9 @@ As a user I would like to see charts with the number of upcoming events in my ci
 
 -Scenario 1:
 Show a chart with the number of upcoming events in each city.
+
 Given: The user selected a city.
+
 When: The user clicks on the city’s upcoming events button.
+
 Then: A chart will list all upcoming events taking place in the city.
