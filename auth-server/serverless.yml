@@ -23,14 +23,8 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs12.x
-  region: eu-central-1
-  timeout: 60 # optional, in seconds, default is 6
-
-environment:
-  CLIENT_ID: ${file(config.json):CLIENT_ID}
-  CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
-  PROJECT_ID: ${file(config.json):PROJECT_ID}
-  CALENDAR_ID: ${file(config.json):CALENDAR_ID}
+  region: us-east-1
+  timeout: 60
 
 # you can overwrite defaults here
 #  stage: dev
@@ -54,32 +48,12 @@ environment:
 #                - "Ref" : "ServerlessDeploymentBucket"
 #                - "/*"
 
-functions:
-  getAuthURL:
-    handler: handler.getAuthURL
-    events:
-      - http:
-          path: api/get-auth-url
-          method: get
-
-          
-          ##comment this line below will be used latter 
-  #getAccessToken:
-   # handler: handler.getAccessToken
-    #events:
-     # - http:
-      #    path: api/token/{code}
-          #method: get
-  #getCalendarEvents:
-    #handler: handler.getCalendarEvents
-    #events:
-      #- http:
-          #path: api/get-events/{access_token}
-          #method: get
-
 # you can define service wide environment variables here
-#  environment:
-#    variable1: value1
+  environment:
+    CLIENT_ID: ${file(config.json):CLIENT_ID}
+    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
+    PROJECT_ID: ${file(config.json):PROJECT_ID}
+    CALENDAR_ID: ${file(config.json):CALENDAR_ID}
 
 # you can add packaging information here
 #package:
@@ -89,9 +63,26 @@ functions:
 #    - include-me.js
 #    - include-me-dir/**
 
-#functions:
-  #hello:
-    #handler: handler.hello
+functions:
+  getAuthURL:
+    handler: handler.getAuthURL
+    events:
+      - http:
+          path: api/get-auth-url
+          method: get
+  getAccessToken:
+    handler: handler.getAccessToken
+    events:
+      - http:
+          path: api/token/{code}
+          method: get
+  getCalendarEvents:
+    handler: handler.getCalendarEvents
+    events:
+      - http:
+          path: api/get-events/{access_token}
+          method: get
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
