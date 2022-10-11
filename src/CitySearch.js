@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class CitySearch extends Component {
+export class CitySearch extends Component {
   state = {
     query: "",
     suggestions: [],
@@ -15,6 +15,7 @@ class CitySearch extends Component {
     });
     this.setState({ query: value, suggestions });
   };
+
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
@@ -35,7 +36,10 @@ class CitySearch extends Component {
             this.setState({ showSuggestions: true });
           }}
         />
-        <ul className="suggestions">
+        <ul
+          className="suggestions"
+          style={this.state.showSuggestions ? {} : { display: "none" }}
+        >
           {this.state.suggestions.map((suggestion) => (
             <li
               key={suggestion}
@@ -44,7 +48,7 @@ class CitySearch extends Component {
               {suggestion}
             </li>
           ))}
-          <li onClick={() => this.handleItemClicked("all")}>
+          <li key="all" onClick={() => this.handleItemClicked("all")}>
             <b>See all cities</b>
           </li>
         </ul>
