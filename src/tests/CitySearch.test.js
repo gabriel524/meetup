@@ -53,8 +53,19 @@ describe("<CitySearch /> component", () => {
       );
     }
   });
-  
-  
+  test("renders state when text input chnages", () => {
+    CitySearchWrapper.setState({
+      query: "Munich",
+    });
+    const eventObject = { target: { value: "Berlin" } };
+    CitySearchWrapper.find(".city").simulate("change", eventObject);
+    expect(CitySearchWrapper.state("query")).toBe("Berlin");
+  });
+
+  test("renders text input correctly", () => {
+    const query = CitySearchWrapper.state("query");
+    expect(CitySearchWrapper.find(".city").prop("value")).toBe(query);
+  });
 
   
 });
