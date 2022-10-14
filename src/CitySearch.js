@@ -33,9 +33,7 @@ export class CitySearch extends Component {
           value={this.state.query}
           onChange={this.handleInputChanged}
         />
-        <ul
-          className="suggestions"
-        >
+        <ul className="suggestions">
           {this.state.suggestions.map((suggestion) => (
             <li
               key={suggestion}
@@ -44,7 +42,7 @@ export class CitySearch extends Component {
               {suggestion}
             </li>
           ))}
-          <li key="all">
+          <li onClick={() => this.handleItemClicked("all")}>
             <b>See all cities</b>
           </li>
         </ul>
