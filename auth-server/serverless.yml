@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: auth-server
+#service: auth-server
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -20,15 +20,54 @@ service: auth-server
 # Check out our docs for more details
 frameworkVersion: '3'
 
-provider:
-  name: aws
-  runtime: nodejs12.x
-  region: us-east-1
-  timeout: 60
+#name: aws
+  #runtime: nodejs12.x
+  #region: eu-central-1  
+  #timeout: 60
 
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
+
+service: auth-server
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-central-1
+  timeout: 60 # optional, in seconds, default is 6
+
+
+  environment:
+    CLIENT_ID: ${file(config.json):CLIENT_ID}
+    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
+    PROJECT_ID: ${file(config.json):PROJECT_ID}
+    CALENDAR_ID: ${file(config.json):CALENDAR_ID}
+
+
+functions:
+  getAuthURL:
+    handler: handler.getAuthURL
+    events:
+      - http:
+          path: api/get-auth-url
+          method: get
+          
+
+          getAccessToken:
+    handler: handler.getAccessToken
+    events:
+      - http:
+          path: api/token/{code}
+          method: get
+
+
+  getCalendarEvents:
+    handler: handler.getCalendarEvents
+    events:
+      - http:
+          path: api/get-events/{access_token}
+          method: get
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
@@ -49,11 +88,11 @@ provider:
 #                - "/*"
 
 # you can define service wide environment variables here
-  environment:
-    CLIENT_ID: ${file(config.json):CLIENT_ID}
-    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
-    PROJECT_ID: ${file(config.json):PROJECT_ID}
-    CALENDAR_ID: ${file(config.json):CALENDAR_ID}
+  #environment:
+    #CLIENT_ID: ${file(config.json):CLIENT_ID}
+    #CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
+    #PROJECT_ID: ${file(config.json):PROJECT_ID}
+    #CALENDAR_ID: ${file(config.json):CALENDAR_ID}
 
 # you can add packaging information here
 #package:
@@ -63,25 +102,6 @@ provider:
 #    - include-me.js
 #    - include-me-dir/**
 
-functions:
-  getAuthURL:
-    handler: handler.getAuthURL
-    events:
-      - http:
-          path: api/get-auth-url
-          method: get
-  getAccessToken:
-    handler: handler.getAccessToken
-    events:
-      - http:
-          path: api/token/{code}
-          method: get
-  getCalendarEvents:
-    handler: handler.getCalendarEvents
-    events:
-      - http:
-          path: api/get-events/{access_token}
-          method: get
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
