@@ -8,13 +8,30 @@
     <title>Test Auth Server</title>
   </head>
 
-  <body>
+  <body class="background">
     <style>
       #container {
         max-width: 500px;
       }
       h4 {
         margin-top: 25px;
+      }
+      #getURL {
+        color: blue;
+      }
+      #getToken{
+        color: black;
+         background-color: lightsalmon;
+      }
+      #getEvents{
+        color: blueviolet;
+       
+      }
+      #container{
+        background-color: hsl(196, 74%, 55%);
+      }
+      .background{
+        background-color: hsl(1078, 100%, 87%);
       }
     </style>
 
@@ -25,11 +42,10 @@
       <button id="getURL">Get OAuth URL</button>
       <p id="result"></p>
       <a id="authURL" href target="_blank">Click to authorize</a>
-      <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
 
       <h4>Step 2: Get your code and exchange for an access token</h4>
       <p>
-        After you’re redirected back to your Meet app on GitHub, copy the code
+        After you are redirected back to your Meet app on GitHub, copy the code
         from the URI.
       </p>
       <br />
@@ -39,7 +55,11 @@
       </label>
       <button id="getToken">Get Token</button>
       <p id="accessToken"></p>
+      <h4>Step 3: Get the calendar events using your access token</h4>
+      <button id="getEvents">Get Events</button>
+      <p id="events"></p>
     </main>
+
     <script type="text/javascript">
       // --------------------- STEP 1
       const getURLElement = document.getElementById("getURL");
@@ -107,6 +127,7 @@
           });
       };
       // -- END OF STEP 3
+      
 
     </script>
   </body>
