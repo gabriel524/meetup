@@ -41,10 +41,11 @@
       <button id="getURL">Get OAuth URL</button>
       <p id="result"></p>
       <a id="authURL" href target="_blank">Click to authorize</a>
+      <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
 
       <h4>Step 2: Get your code and exchange for an access token</h4>
       <p>
-        After you are redirected back to your Meet app on GitHub, copy the code
+        After you’re redirected back to your Meetup app on GitHub, copy the code
         from the URI.
       </p>
       <br />
@@ -54,6 +55,7 @@
       </label>
       <button id="getToken">Get Token</button>
       <p id="accessToken"></p>
+       <!-- STEP 3 -- MAKE SURE STEP 3 WORKS BEFORE MOVING ON-->
       <h4>Step 3: Get the calendar events using your access token</h4>
       <button id="getEvents">Get Events</button>
       <p id="events"></p>
@@ -65,8 +67,7 @@
       const resultElement = document.getElementById("result");
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
-      const getAuthURL =
-        "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
+      const getAuthURL ="https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url";
 
       getURLElement.onclick = function () {
         fetch(getAuthURL)
@@ -84,13 +85,11 @@
       };
       // --------------------- END OF STEP 1
 
-
       // --------------------- STEP 2
       const codeValue = document.getElementById("code");
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
-      const getToken =
-        "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/token";
+      const getToken ="https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/token";
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
@@ -109,11 +108,12 @@
           });
       };
       // --------------------- END OF STEP 2
-      
-      // -- STEP 3
+
+
+     // -- STEP 3
       const getEvents = document.getElementById("getEvents");
       const events = document.getElementById("events");
-      const getCalendarEvents = "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
+      const getCalendarEvents ="https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/get-events";
 
       getEvents.onclick = function () {
         const { access_token } = JSON.parse(accessTokenElement.innerText);
@@ -126,7 +126,7 @@
             events.innerText = JSON.stringify(json, null, 2);
           });
       };
-      // -- END OF STEP 3
+      // -- END OF STEP 3   
 
     </script>
   </body>
