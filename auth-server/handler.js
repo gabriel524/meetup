@@ -28,7 +28,7 @@ module.exports.getAuthURL = async () => {
    * "OAuth consent screen" settings in your project on your Google Console. Also, any passed
    *  scopes are the ones users will see when the consent screen is displayed to them.
    */
-   
+
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
     scope: SCOPES,
@@ -71,6 +71,9 @@ module.exports.getAccessToken = async (event) => {
     .then((token) => {
       // Respond with OAuth token
       return {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         statusCode: 200,
         body: JSON.stringify(token),
       };
@@ -79,6 +82,9 @@ module.exports.getAccessToken = async (event) => {
       // Handle error
       console.error(err);
       return {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         statusCode: 500,
         body: JSON.stringify(err),
       };
