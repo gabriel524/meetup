@@ -71,9 +71,6 @@ module.exports.getAccessToken = async (event) => {
     .then((token) => {
       // Respond with OAuth token
       return {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
         statusCode: 200,
         body: JSON.stringify(token),
       };
@@ -82,9 +79,6 @@ module.exports.getAccessToken = async (event) => {
       // Handle error
       console.error(err);
       return {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
         statusCode: 500,
         body: JSON.stringify(err),
       };
