@@ -14,7 +14,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn more about React
+          Welcome to Gabriel react app
         </a>
       </header>
     </div>
