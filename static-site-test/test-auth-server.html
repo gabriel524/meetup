@@ -27,9 +27,7 @@
         color: blueviolet;
        
       }
-      container{
-        background-color: hsl(196, 74%, 55%);
-      }
+      
       .background{
         background-color: hsl(1078, 100%, 87%);
       }
@@ -89,7 +87,7 @@
       const codeValue = document.getElementById("code");
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
-      const getToken ="https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}";
+      const getToken ="https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/token";
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
@@ -113,7 +111,7 @@
      // -- STEP 3
       const getEvents = document.getElementById("getEvents");
       const events = document.getElementById("events");
-      const getCalendarEvents ="https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/{access_token}";
+      const getCalendarEvents ="https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
 
       getEvents.onclick = function () {
         const { access_token } = JSON.parse(accessTokenElement.innerText);
