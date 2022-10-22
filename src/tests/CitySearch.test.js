@@ -11,7 +11,6 @@ describe("<CitySearch /> component", () => {
     CitySearchWrapper = shallow(
       <CitySearch locations={locations} updateEvents={() => {}} />
     );
-    
   });
   test("render text input", () => {
     expect(CitySearchWrapper.find(".city")).toHaveLength(1);
@@ -54,7 +53,6 @@ describe("<CitySearch /> component", () => {
       );
     }
   });
-
   test("renders state when text input chnages", () => {
     CitySearchWrapper.setState({
       query: "Munich",
