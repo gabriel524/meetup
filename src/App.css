@@ -175,7 +175,7 @@ input[type="number"] {
 .google-btn:active {
   background: #1669f2;
 }
-.google-icon-wrapper {
+.google-icon-wrapper { 
   position: absolute;
   margin-top: 1px;
   margin-left: 1px;
