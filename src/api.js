@@ -67,7 +67,6 @@ export const getEvents = async () => {
     removeQuery();
     const url =
       "https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/get-events" +
-      "/" +
       token;
     const result = await axios.get(url);
     if (result.data) {
