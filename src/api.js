@@ -1,4 +1,5 @@
 import { mockData } from "./mock-data";
+import axios from "axios";
 
 export const extractLocations = (events) => {
   var extractLocations = events.map((event) => event.location);
@@ -7,4 +8,9 @@ export const extractLocations = (events) => {
 };
 export const getEvents = async () => {
   return mockData;
+};
+
+export const getAccessToken = async () => {
+  const accessToken = localStorage.getItem("access_token");
+
 };
