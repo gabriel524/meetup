@@ -2,6 +2,7 @@ import { mockData } from "./mock-data";
 import NProgress from "nprogress";
 import axios from "axios";
 
+
 export const extractLocations = (events) => {
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];
@@ -67,6 +68,7 @@ export const getEvents = async () => {
     removeQuery();
     const url =
       "https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/get-events" +
+      "/" +
       token;
     const result = await axios.get(url);
     if (result.data) {
