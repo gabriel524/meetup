@@ -14,3 +14,5 @@ describe("show/hide an event details", () => {
     browser.close();
   });
 });
+
+
