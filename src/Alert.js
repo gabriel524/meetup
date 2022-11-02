@@ -26,16 +26,6 @@ class InfoAlert extends Alert {
         super(props);
         this.color = "blue";
     };
-
-
-    render() {
-        return (
-            <div className="CitySearch">
-                <InfoAlert text={this.state.infoText} />
-                ...
-            </div>
-        );
-    }
 }
 
 
