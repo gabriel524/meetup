@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
-  padding: 2% 5%;
-  background-color: #d444d4;
+  padding: 2% 20%;
+  background-color: rgba(7, 200, 194, 0.793);
+  position: relative;
 }
 
 .App * {
@@ -116,7 +117,7 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.numberOfEvents {
+.NumberOfEvents {
   width: 200px;
   margin: 20px auto;
   text-align: center;
@@ -130,9 +131,10 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
+.Alert .ErrorAlert {
   position: fixed;
-  top: 20px;
+  top: 11px;
+  
 }
 
 .data-vis-wrapper {
