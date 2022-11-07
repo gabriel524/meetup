@@ -2,8 +2,13 @@
 .App {
   text-align: center;
   padding: 2% 20%;
-  background-color: rgba(7, 200, 194, 0.793);
+  font-variant: small-caps;
   position: relative;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+body {
+  background-color: rgba(7, 200, 194, 0.793);
 }
 
 .App * {
@@ -27,6 +32,29 @@ p {
   display: block;
 }
 
+.slogan {
+  font-family: 'Roboto';
+  color: #13453f;
+  text-shadow: -1px 1px #f194b5a5;
+  margin-bottom: 40px;
+}
+
+.input-wrapper {
+  padding: 10px 10px 20px;
+  margin: 10px;
+  text-align: center;
+  align-content: center;
+  border: 1px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(64, 62, 72, 0.789);
+}
+
+.event-summary-title,
+.event-about-title {
+  font-variant: small-caps;
+}
+
+
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -37,10 +65,20 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
+  margin: 10px;
 }
 
-.city {
+.city,
+.number_input {
+  margin-top: 0.5rem;
+  padding: 1rem;
   width: 250px;
+  height: 2rem;
+  border: 3px solid transparent;
+  outline: none;
+  border-radius: 0.4rem;
+   box-shadow: rgba(235, 235, 235, 0.19) 0px 10px 20px,
+    rgba(255, 255, 255, 0.23) 0px 6px 6px; 
 }
 
 .CitySearch {
@@ -52,7 +90,20 @@ input[type="number"] {
   position: relative;
 }
 
+/*.numberOfEvents {
+  margin-left: 10px;
+  vertical-align: text-top;
+  
+}*/
+.number-of-events{
+  margin-right: 10px;
+  vertical-align: text-top;
+  text-align: justify;
+  
+}
+
 .suggestions {
+
   width: 250px;
   position: absolute;
   z-index: 2;
@@ -62,11 +113,11 @@ input[type="number"] {
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
-
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: lightblue;
+  background-color: #f194b4;
+  color: white;
   cursor: default;
 }
 
@@ -79,14 +130,35 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.event {
-  padding: 10px 10px 35px;
-  margin-bottom: 10px;
-  text-align: left;
-  border: 1px solid blue;
-  border-radius: 4px;
-  position: relative;
+.recharts-pie-label-text {
+  font-family: 'Roboto';
+  font-weight: 200;
+  text-shadow: 1px 1px 1px #413c5893;
 }
+
+.EventList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  list-style: none;
+  text-align: center;
+}
+
+
+.events {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  padding: 10px 10px 11px;
+  margin: 10px;
+  min-height:200px;
+  text-align: left;
+  border-radius: 25px;
+  position: relative;
+  background-color: #c0eec0;
+  color: #000;
+  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+}
+
 
 .details-btn {
   position: absolute;
@@ -135,6 +207,15 @@ input[type="number"] {
   position: fixed;
   top: 11px;
   
+}
+
+.data-wrapper {
+  padding: 20px 20px 35px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(64, 62, 72, 0.789);
 }
 
 .data-vis-wrapper {
@@ -201,8 +282,6 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
