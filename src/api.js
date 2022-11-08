@@ -11,7 +11,7 @@ export const extractLocations = (events) => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/token/" +
+    "https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/token/" +
       encodeCode
   )
     .then((res) => {
@@ -66,8 +66,7 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =
-      "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
-      "/" +
+      "https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/get-events/" +
       token;
     const result = await axios.get(url);
     if (result.data) {
@@ -90,7 +89,7 @@ export const getAccessToken = async () => {
     const code = await searchParams.get("code");
     if (!code) {
       const results = await axios.get(
-        "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
+        "https://8stm0qydxd.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
       );
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
