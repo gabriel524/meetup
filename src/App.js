@@ -11,6 +11,8 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
+    locationSelected: "all",
+    showWelcomeScreen: undefined,
   };
 
   componentDidMount() {
@@ -22,9 +24,6 @@ class App extends Component {
     });
   }
 
-  componentWillUnmount() {
-    this.mounted = false;
-  }
   updateEvents = (location, maxNumEvents) => {
     if (maxNumEvents === undefined) {
       maxNumEvents = this.state.numberOfEvents;
@@ -46,25 +45,41 @@ class App extends Component {
     });
   };
 
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
   render() {
-    const {numberOfEvents} = this.state;
+    if (this.state.showWelcomeScreen === undefined)
+      return <div className="App" />;
+    const { numberOfEvents } = this.state;
     return (
       <div className="App">
-        <h1>Meet App</h1>
-        <h4>Please choose your nearest city</h4>
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
+        <div className="title-wrapper">
+          <h1>Meet App</h1>
+          <h4>Please choose your nearest city</h4>
+        </div>
+        <div className="data-wrapper">
+          <CitySearch
+            locations={this.state.locations}
+            updateEvents={this.updateEvents}
+          />
+          <EventList events={this.state.events} />
+          <NumberOfEvents
+            numberOfEvents={numberOfEvents}
+            updateEvents={this.updateEvents}
+          />
+        </div>
+        <Row className="events-wrapper"></Row>
+        <WelcomeScreen
+          showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => {
+            getAccessToken();
+          }}
         />
-        <NumberOfEvents
-          numberOfEvents={numberOfEvents}
-          updateEvents={this.updateEvents}
-        />
-        <EventList events={this.state.events} />
       </div>
     );
   }
 }
-
 
 export default App;
