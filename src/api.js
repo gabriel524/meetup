@@ -1,12 +1,3 @@
-/**
- *
- * @param {*} events:
- * The following function should be in the “api.js” file.
- * This function takes an events array, then uses map to create a new array with only locations.
- * It will also remove all duplicates by creating another new array using the spread operator and spreading a Set.
- * The Set will remove all duplicates from the array.
- */
-
 import { mockData } from "./mock-data";
 import axios from "axios";
 import NProgress from "nprogress";
@@ -40,8 +31,7 @@ export const getAccessToken = async () => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/token" +
-      "/" +
+    "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/token/" +
       encodeCode
   )
     .then((res) => {
@@ -96,8 +86,7 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =
-      "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
-      "/" +
+      "https://f6net9mny7.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/" +
       token;
     const result = await axios.get(url);
     if (result.data) {
