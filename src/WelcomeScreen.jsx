@@ -6,7 +6,7 @@ function WelcomeScreen(props) {
     <div className="WelcomeScreen">
       <video autoPlay loop muted id="video">
         <source
-          src="https://www.pexels.com/video/people-in-a-conference-room-for-a-business-meeting-261-large.mp4"
+          src="https://assets.mixkit.co/videos/preview/mixkit-young-business-people-in-a-meeting-38574-large.mp4"
           type="video/mp4"
         />
       </video>
