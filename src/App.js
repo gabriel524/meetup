@@ -6,13 +6,17 @@ import NumberOfEvents from "./NumberOfEvents";
 import "./nprogress.css";
 import Row from "react-bootstrap/Row";
 import WelcomeScreen from "./WelcomeScreen";
+import { WarningAlert } from "./Alert";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 class App extends Component {
   state = {
     events: [],
     locations: [],
+    allEvents: [],
     numberOfEvents: 32,
     locationSelected: "all",
+    errorText: "",
+    offlineText: "",
     showWelcomeScreen: undefined,
   };
 
@@ -27,10 +31,22 @@ class App extends Component {
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({
-            events: events,
+            allEvents: events,
+            events: events.slice(0, this.state.numberOfEvents),
             locations: extractLocations(events),
           });
         }
+      });
+    }
+
+    if (!navigator.onLine) {
+      this.setState({
+        offlineText:
+          "It seems that you're not connected to the internet, your data was loaded from the cache.",
+      });
+    } else {
+      this.setState({
+        offlineText: "",
       });
     }
   }
@@ -48,9 +64,11 @@ class App extends Component {
         location === "all"
           ? events
           : events.filter((event) => event.location === location);
+        const filteredEvents = locationEvents.slice(0, maxNumEvents);
       this.setState({
         events: locationEvents.slice(0, maxNumEvents),
         numberOfEvents: maxNumEvents,
+        event: filteredEvents,
         locationSelected: location,
       });
     });
@@ -60,12 +78,53 @@ class App extends Component {
     this.mounted = false;
   }
 
+  handleInputChanged = (event) => {
+    let newCount = event.target.value;
+    if (isNaN(newCount)) {
+      return "";
+    } else {
+      parseInt(newCount);
+    }
+    const allEvents = this.state.allEvents;
+    const { locationSelected } = this.state;
+    const locationEvents =
+      locationSelected === "all"
+        ? allEvents
+        : allEvents.filter((event) => event.location === locationSelected);
+    if (newCount > 32 || newCount <= 0) {
+      this.setState({
+        numberOfEvents: newCount,
+        events: locationEvents.slice(0, newCount),
+        errorText: "Please choose a number between 1 and 32",
+      });
+    } else {
+      this.setState({
+        numberOfEvents: newCount,
+        events: locationEvents.slice(0, newCount),
+        errorText: " ",
+      });
+    }
+  };
+
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
+      const city = location.split(", ").shift();
+      return { city, number };
+    });
+    return data;
+  };
+
   render() {
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;
     const { numberOfEvents } = this.state;
     return (
       <div className="App">
+        <WarningAlert text={this.state.offlineText} />
         <div className="title-wrapper">
           <h1>Meet App</h1>
           <h4>Please choose your nearest city</h4>
@@ -79,6 +138,7 @@ class App extends Component {
           <NumberOfEvents
             numberOfEvents={numberOfEvents}
             updateEvents={this.updateEvents}
+            handleInputChanged={this.handleInputChanged}
           />
         </div>
         <Row className="events-wrapper"></Row>
