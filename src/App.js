@@ -78,33 +78,6 @@ class App extends Component {
     this.mounted = false;
   }
 
-  handleInputChanged = (event) => {
-    let newCount = event.target.value;
-    if (isNaN(newCount)) {
-      return "";
-    } else {
-      parseInt(newCount);
-    }
-    const allEvents = this.state.allEvents;
-    const { locationSelected } = this.state;
-    const locationEvents =
-      locationSelected === "all"
-        ? allEvents
-        : allEvents.filter((event) => event.location === locationSelected);
-    if (newCount > 32 || newCount <= 0) {
-      this.setState({
-        numberOfEvents: newCount,
-        events: locationEvents.slice(0, newCount),
-        errorText: "Please choose a number between 1 and 32",
-      });
-    } else {
-      this.setState({
-        numberOfEvents: newCount,
-        events: locationEvents.slice(0, newCount),
-        errorText: " ",
-      });
-    }
-  };
 
   getData = () => {
     const { locations, events } = this.state;
