@@ -231,11 +231,6 @@ input[type="number"] {
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   list-style: none;
   text-align: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  list-style: none;
-  width: 75%;
-  margin: auto;
 }
 
 
