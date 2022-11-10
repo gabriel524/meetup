@@ -120,6 +120,9 @@ input[type="number"] {
     #7a00ff,
     #ff00c8,
     #ff0000
+    #bbccff
+    #13453f
+    #008000
   );
   position: absolute;
   top: -2px;
@@ -136,7 +139,7 @@ input[type="number"] {
 }
 
 .btn:active {
-  color: rgb(79, 79, 79);
+  color: hsl(100, 79%, 52%);
 }
 
 .btn:active:after {

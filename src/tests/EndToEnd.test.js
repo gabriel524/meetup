@@ -6,9 +6,9 @@ describe("show/hide an event details", () => {
   let page;
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: true,
+     /* headless: true,
       slowMo: 250,
-      ignoreDefaultArgs: ["--disable-extensions"],
+      ignoreDefaultArgs: ["--disable-extensions"],*/
     });
     page = await browser.newPage();
     await page.goto("http://localhost:3000/");
