@@ -195,6 +195,10 @@ input[type="number"] {
   text-align: center;
 }
 
+.number-of-events{
+  margin-bottom: 1rem;
+}
+
 .button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -282,6 +286,7 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
+
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
