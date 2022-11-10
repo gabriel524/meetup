@@ -95,6 +95,12 @@ input[type="number"] {
   position: relative;
 }
 
+.cities_btn {
+  font-size: small;
+  width: 6rem;
+  height: 1.7rem;
+}
+
 /*.numberOfEvents {
   margin-left: 10px;
   vertical-align: text-top;
@@ -331,7 +337,7 @@ input[type="number"] {
     #00ffd5,
     #002bff,
   )
-}
+} 
 .login-button {
   color: #494949;
   text-transform: uppercase;
