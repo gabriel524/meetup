@@ -13,6 +13,8 @@ class Event extends Component {
 
     return (
       < div className="events">
+        <div className="details-btn"></div>
+        <div className="event-card">
           <h3 className="event-title">{event.summary}</h3>
           <p className="event-info">
             {event.location} {event.start.dateTime} {event.start.timeZone}
@@ -39,7 +41,7 @@ class Event extends Component {
             </button>
           )}
         </div>
-        
+        </div>
         
     );
   }

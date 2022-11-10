@@ -97,7 +97,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="title-wrapper">
-          <h1>Meet App</h1>
+          <h1 className="title">Meet App</h1>
           <h4>Please choose your nearest city</h4>
         </div>
         <div className="data-wrapper">
