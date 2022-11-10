@@ -77,11 +77,13 @@ input[type="number"] {
 .number_input {
   margin-top: 0.5rem;
   padding: 1rem;
-  width: 150px;
+  width: 250px;
   height: 2rem;
   border: 3px solid transparent;
   outline: none;
   border-radius: 0.4rem;
+   box-shadow: rgba(235, 235, 235, 0.19) 0px 10px 20px,
+    rgba(255, 255, 255, 0.23) 0px 6px 6px; 
 }
 
 .city:hover,
