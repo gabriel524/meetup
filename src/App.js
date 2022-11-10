@@ -11,7 +11,6 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    allEvents: [],
     numberOfEvents: 32,
     locationSelected: "all",
     errorText: "",
@@ -93,7 +92,7 @@ class App extends Component {
   render() {
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;
-    const { numberOfEvents } = this.state;
+    const { locations, numberOfEvents } = this.state;
     return (
       <div className="App">
         <div className="title-wrapper">
