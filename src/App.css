@@ -245,7 +245,7 @@ input[type="number"] {
   display: flex;
   padding: 10px 10px 11px;
   margin: 10px;
-   border-width: 4px;
+  border-width: 4px;
   min-height:200px;
   text-align: left;
   border-radius: 25px;
@@ -253,6 +253,14 @@ input[type="number"] {
   background-color: #c0eec0;
   color: #000;
   border-image: linear-gradient(to right, rgb(19, 8, 220), rgb(243, 11, 204)) 1;
+}
+.events:hover {
+  animation: bounce 0.5s linear;
+  cursor: pointer;
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, hsl(22, 100%, 56%), hwb(301 22% 1%)) 1;
+  transition: ease-in-out 0.5s;
 }
 
 
@@ -330,12 +338,7 @@ input[type="number"] {
 .recharts-surface {
   overflow: visible;
 }
-
-.events:hover {
-    animation: bounce 0.5s linear;
-    cursor: pointer;
-    
-}
+ 
 .events:before {
   content: '';
   background: linear-gradient(
