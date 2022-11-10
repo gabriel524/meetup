@@ -4,7 +4,7 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import "./nprogress.css";
-import Column from "react-bootstrap/Row";
+import Row from "react-bootstrap/Row";
 import WelcomeScreen from "./WelcomeScreen";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 class App extends Component {
@@ -112,7 +112,7 @@ class App extends Component {
             handleInputChanged={this.handleInputChanged}
           />
         </div>
-        <Column className="events-wrapper"></Column>
+        <Row className="events-wrapper"></Row>
         <WelcomeScreen
           showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => {
