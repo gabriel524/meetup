@@ -77,13 +77,11 @@ input[type="number"] {
 .number_input {
   margin-top: 0.5rem;
   padding: 1rem;
-  width: 250px;
+  width: 150px;
   height: 2rem;
   border: 3px solid transparent;
   outline: none;
   border-radius: 0.4rem;
-   box-shadow: rgba(235, 235, 235, 0.19) 0px 10px 20px,
-    rgba(255, 255, 255, 0.23) 0px 6px 6px; 
 }
 
 .city:hover,
@@ -91,7 +89,7 @@ input[type="number"] {
   border: 3px solid rgb(255, 154, 12);
 }
 
-.CitySearch {
+.CitySearch .event_number{
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
@@ -260,9 +258,8 @@ input[type="number"] {
   border-width: 4px;
   border-style: solid;
   border-image: linear-gradient(to right, hsl(22, 100%, 56%), hwb(301 22% 1%)) 1;
-  transition: ease-in-out 0.5s;
+  
 }
-
 
 .details-btn {
   position: absolute;
@@ -339,18 +336,6 @@ input[type="number"] {
   overflow: visible;
 }
  
-.events:before {
-  content: '';
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-  )
-} 
 .login-button {
   color: #494949;
   text-transform: uppercase;
