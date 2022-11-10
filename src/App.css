@@ -246,11 +246,10 @@ input[type="number"] {
   border-width: 4px;
   min-height:200px;
   text-align: left;
-  border-radius: 25px;
+  border-radius: 10px;
   position: relative;
   background-color: #c0eec0;
   color: #000;
-  border-image: linear-gradient(to right, rgb(19, 8, 220), rgb(243, 11, 204)) 1;
 }
 .events:hover {
   animation: bounce 0.5s linear;
