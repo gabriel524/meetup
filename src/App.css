@@ -195,6 +195,10 @@ input[type="number"] {
   text-align: center;
 }
 
+.number-of-events{
+  margin-bottom: 1rem;
+}
+
 .button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

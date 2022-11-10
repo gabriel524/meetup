@@ -6,7 +6,6 @@ import NumberOfEvents from "./NumberOfEvents";
 import "./nprogress.css";
 import Row from "react-bootstrap/Row";
 import WelcomeScreen from "./WelcomeScreen";
-import { WarningAlert } from "./Alert";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 class App extends Component {
   state = {
@@ -97,7 +96,6 @@ class App extends Component {
     const { numberOfEvents } = this.state;
     return (
       <div className="App">
-        <WarningAlert text={this.state.offlineText} />
         <div className="title-wrapper">
           <h1>Meet App</h1>
           <h4>Please choose your nearest city</h4>
