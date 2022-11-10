@@ -315,6 +315,23 @@ input[type="number"] {
   overflow: visible;
 }
 
+.events:hover {
+    animation: bounce 0.5s linear;
+    cursor: pointer;
+    
+}
+.events:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+  )
+}
 .login-button {
   color: #494949;
   text-transform: uppercase;
@@ -379,6 +396,23 @@ input[type="number"] {
     background-position: 0 0;
   }
 }
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 @media only screen and (max-width: 760px) {
   .city,
