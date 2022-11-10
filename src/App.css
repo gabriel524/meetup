@@ -8,7 +8,7 @@
   margin-bottom: 10px;
 }
 body {
-  background-color: purple;
+  background-color: rgba(7, 200, 194, 0.793);
 }
 
 .App * {
@@ -110,7 +110,7 @@ input[type="number"] {
 .btn:before {
   content: '';
   background: linear-gradient(
-    47deg,
+    45deg,
     #ff0000,
     #ff7300,
     #fffb00,
@@ -121,7 +121,7 @@ input[type="number"] {
     #ff00c8,
     #ff0000
     #13453f
-    #413c5893
+    #ddbbff
 
   );
   position: absolute;
@@ -132,7 +132,7 @@ input[type="number"] {
   filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
+  animation: glowing 30s linear infinite;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
@@ -227,11 +227,9 @@ input[type="number"] {
   justify-content: space-between;
   flex-direction: column;
   display: flex;
-  padding: 10px 10px 11px;
   text-align: left;
   position: relative;
-  color: whitesmoke;
-  background-color: aquamarine;
+  color: black;
   min-height: 18rem;
   padding-top: 1.5rem;  
   padding-bottom: 0.5rem;
