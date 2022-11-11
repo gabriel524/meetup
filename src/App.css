@@ -209,6 +209,10 @@ input[type="number"] {
   background-color: #f194b4;
   color: white;
   cursor: default;
+  padding-bottom: 5px;
+  width: 25%;
+  margin: auto;
+  list-style: none;
 }
 
 .suggestions > li:last-child {
@@ -218,6 +222,12 @@ input[type="number"] {
 
 .suggestions > li:hover {
   background-color: #bcdcdb;
+  font-size: bold;
+  color: rgb(197, 241, 0);
+  text-decoration: underline;
+  scale: 1.15;
+  transition: ease-in-out 0.33s;
+  cursor: pointer;
 }
 
 .recharts-pie-label-text {
