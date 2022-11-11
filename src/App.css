@@ -16,6 +16,11 @@ body {
   
 }
 
+.events_number_container {
+  margin-top: 1rem;
+}
+
+
 ul {
   padding: 0;
   list-style: none;
@@ -91,7 +96,7 @@ input[type="number"] {
   border: 3px solid rgb(255, 154, 12);
 }
 
-.CitySearch {
+.CitySearch .event_number {
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
@@ -106,11 +111,6 @@ input[type="number"] {
   height: 1.7rem;
 }
 
-/*.numberOfEvents {
-  margin-left: 10px;
-  vertical-align: text-top;
-  
-}*/
 .number-of-events{
   margin-right: 10px;
   vertical-align: text-top;
@@ -257,15 +257,6 @@ input[type="number"] {
   border-style: solid;
   border-image: linear-gradient(to right, hsl(22, 100%, 56%), hwb(301 22% 1%)) 1;
   
-}
-
-.event_number{
-  display: flex;
-  flex-direction: column;
-  flex-basis: 300px;
-  max-width: 300px;
-  margin: auto;
-  position: relative;
 }
 
 .details-btn {
