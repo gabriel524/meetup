@@ -1,14 +1,14 @@
 import puppeteer from "puppeteer";
-jest.setTimeout(80000);
+jest.setTimeout(30000);
 
 describe("show/hide an event details", () => {
   let browser;
   let page;
   beforeAll(async () => {
     browser = await puppeteer.launch({
-     /* headless: true,
+     headless: true,
       slowMo: 250,
-      ignoreDefaultArgs: ["--disable-extensions"],*/
+      ignoreDefaultArgs: ["--disable-extensions"],
     });
     page = await browser.newPage();
     await page.goto("http://localhost:3000/");
