@@ -62,7 +62,7 @@ class App extends Component {
         location === "all"
           ? events
           : events.filter((event) => event.location === location);
-        const filteredEvents = locationEvents.slice(0, maxNumEvents);
+      const filteredEvents = locationEvents.slice(0, maxNumEvents);
       this.setState({
         events: locationEvents.slice(0, maxNumEvents),
         numberOfEvents: maxNumEvents,
@@ -75,7 +75,6 @@ class App extends Component {
   componentWillUnmount() {
     this.mounted = false;
   }
-
 
   getData = () => {
     const { locations, events } = this.state;
@@ -100,16 +99,16 @@ class App extends Component {
           <h4>Please choose your nearest city</h4>
         </div>
         <div className="data-wrapper">
-          <CitySearch
-            locations={this.state.locations}
-            updateEvents={this.updateEvents}
-          />
-          <EventList events={this.state.events} />
           <NumberOfEvents
             numberOfEvents={numberOfEvents}
             updateEvents={this.updateEvents}
             handleInputChanged={this.handleInputChanged}
           />
+          <CitySearch
+            locations={this.state.locations}
+            updateEvents={this.updateEvents}
+          />
+          <EventList events={this.state.events} />
         </div>
         <Row className="events-wrapper"></Row>
         <WelcomeScreen
