@@ -194,15 +194,16 @@ input[type="number"] {
 
 .suggestions {
 
-  width: 250px;
-  position: absolute;
-  z-index: 2;
-  align-self: center;
-  margin: 0;
-  top: 43px;
-  font-size: 14px;
-  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+   align-self: center;
+    box-shadow: 10px 10px 16px -12px rgb(0 0 0 / 75%);
+    font-size: 14px;
+    margin: 0 auto;
+    position: relative;
+    /* top: 0px; */
+    width: 250px;
+    z-index: 99999999;
 }
+
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
@@ -218,7 +219,7 @@ input[type="number"] {
 
 .suggestions > li:hover {
   background-color: #bcdcdb;
-  scale: 1.15;
+  scale: 1;
   transition: ease-in-out 0.33s;
   cursor: pointer;
   font-size: bold;
