@@ -26,7 +26,7 @@ describe("<NumberOfEvents /> component", () => {
         "change",
         eventObject
       );
-      console.log("Abraham");
+
       
       expect(NumberOfEventsWrapper.state("numOfEvents")).toBe(32);
     });

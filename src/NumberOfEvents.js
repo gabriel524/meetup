@@ -3,31 +3,43 @@ import { ErrorAlert } from "./Alert";
 
 class NumberOfEvents extends Component {
   state = {
+    allEvents: [],
     numberOfEvents: 32,
+    locationSelected: "all",
     infoText: "",
   };
 
   handleInputChanged = (event) => {
     let inputValue = event.target.value;
-    if (inputValue > 32 || inputValue < 0) {
+    if (isNaN(inputValue)) {
+      return "";
+    } else {
+      parseInt(inputValue);
+    }
+    const allEvents = this.state.allEvents;
+    const { locationSelected } = this.state;
+    const locationEvents =
+      locationSelected === "all"
+        ? allEvents
+        : allEvents.filter((event) => event.location === locationSelected);
+    if (inputValue > 32 || inputValue <= 0) {
       this.setState({
         numberOfEvents: inputValue,
-        infoText: "Please chose a number between 1 - 32.",
+        events: locationEvents.slice(0, inputValue),
+        infoText: "Please choose a number between 1 and 32",
       });
     } else {
       this.setState({
-        numberOfEvents: event.target.value,
+        numberOfEvents: inputValue,
+        events: locationEvents.slice(0, inputValue),
         infoText: " ",
       });
     }
-
-    //this.props.updateEvents(undefined, inputValue);
   };
-
   render() {
     return (
       <div className="event_number">
-        <div className="number-of-events">Show Number of Events: </div>
+        <div className="number-of-events">Show Number of Events </div>
         <input
           type="number"
           id="events-num-input"
