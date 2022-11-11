@@ -10,6 +10,7 @@ class NumberOfEvents extends Component {
   };
 
   handleInputChanged = (event) => {
+    console.log(event.target.value);
     let inputValue = event.target.value;
     if (isNaN(inputValue)) {
       return "";
