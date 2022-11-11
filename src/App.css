@@ -221,6 +221,8 @@ input[type="number"] {
   scale: 1.15;
   transition: ease-in-out 0.33s;
   cursor: pointer;
+  font-size: bold;
+  color: #00edf1;
 }
 
 
