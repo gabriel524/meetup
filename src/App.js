@@ -29,7 +29,6 @@ class App extends Component {
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({
-            allEvents: events,
             events: events.slice(0, this.state.numberOfEvents),
             locations: extractLocations(events),
           });
@@ -53,10 +52,6 @@ class App extends Component {
     if (maxNumEvents === undefined) {
       maxNumEvents = this.state.numberOfEvents;
     } else this.setState({ numberOfEvents: maxNumEvents });
-    if (location === undefined) {
-      location = this.state.locationSelected;
-    }
-
     getEvents().then((events) => {
       const locationEvents =
         location === "all"
@@ -123,3 +118,5 @@ class App extends Component {
 }
 
 export default App;
+
+
