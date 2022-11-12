@@ -7,6 +7,14 @@ import "./nprogress.css";
 import Row from "react-bootstrap/Row";
 import WelcomeScreen from "./WelcomeScreen";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+} from "recharts";
 class App extends Component {
   state = {
     events: [],
@@ -70,39 +78,57 @@ class App extends Component {
   componentWillUnmount() {
     this.mounted = false;
   }
-
-  getData = () => {
-    const { locations, events } = this.state;
-    const data = locations.map((location) => {
-      const number = events.filter(
-        (event) => event.location === location
-      ).length;
-      const city = location.split(", ").shift();
-      return { city, number };
-    });
+ getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return {city, number};
+    })
     return data;
   };
 
   render() {
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;
-    const { numberOfEvents } = this.state;
+    const { locations, numberOfEvents } = this.state;
     return (
       <div className="App">
         <div className="title-wrapper">
           <h1 className="title">Meet App</h1>
           <h4>Please choose your nearest city</h4>
         </div>
+
         <div className="data-wrapper">
           <NumberOfEvents
-            numberOfEvents={numberOfEvents}
             updateEvents={this.updateEvents}
+            numberOfEvents={numberOfEvents}
             handleInputChanged={this.handleInputChanged}
           />
           <CitySearch
             locations={this.state.locations}
             updateEvents={this.updateEvents}
           />
+
+          <h4>Events in each city</h4>
+
+          <ScatterChart
+            width={400}
+            height={400}
+            margin={{
+              top: 20,
+              right: 20,
+              bottom: 20,
+              left: 20,
+            }}
+          >
+            <CartesianGrid />
+            <XAxis type="number" dataKey="x" name="stature" unit="cm" />
+            <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+            <Scatter data={this.getData()} fill="#8884d8" />
+          </ScatterChart>
+
           <EventList events={this.state.events} />
         </div>
         <Row className="events-wrapper"></Row>
