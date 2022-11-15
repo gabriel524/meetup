@@ -435,7 +435,7 @@ input[type="number"] {
 
 
 @media only screen and (min-width: 992px) {
-  .data-vis-wrapper {
+  .data-wrapper {
     flex-direction: row;
   }
   .data-vis-wrapper .recharts-responsive-container {

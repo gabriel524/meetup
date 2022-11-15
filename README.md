@@ -1,21 +1,71 @@
+## Meet App
+
+### Introduction
 ## meetup Test Scenarios
 Brief discription: This app work by providing a list of upcoming events for any given city, with data provided by Google Calendar which will be use,the app works offline using cached data from the last time it was used online. Why using the app, user can search for events in a specific city or browse all events, customize how many events are shown on screen, click an event for more details, and see how many events are upcoming in certain cities.
 
+
+This is a serverless React App built using TDD (Test driven development).App uses Google APi to fetch events data.
+
+### Features
+
+- See events fetched from Google API
+- Display number of events you want to see
+- Search for a specific City
+- See all the data displayed in charts
+
+### What to do?
+Before doing anything, of course, make sure Node and npm are available. To install node, plese visit: https://nodejs.org/en/download/
+
+Then follow steps below
+
+Run command to clone repository:
+
+```
+$ git clone https://github.com/gabriel524/meetup.git
+```
+
+After cloning the repo, you should install all dependencies
+
+```
+$ npm install
+```
+
+In your root project folder, just run
+
+```
+$ npm run start
+```
+
+After that, app should be automatically opened in `localhost:3000/meet`
+
+---
 ## How to Use This App.
-When first opening the app, you will be prompted to sign in with Google in order to gain access to the Google Calendar API. Then, you can specify what city and how many events to view, and click on an event to view more details!
+After completing the above stepts, when first opening the app, you will be prompted to sign in with Google in order to gain access to the Google Calendar API. Then, you can specify what city and how many events to view, and click on an event to view more details!
 
-## Dependencies
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- React
-- React-DOM
-- React-Scripts
-- Axios
-- NProgress
-- Recharts
-- This app used the Google Calendar API to fetch information about upcoming events by location. these are new comments 
+### Tech and Dependencies used:
+
+```
+HTML5
+CSS3
+Javascript (ES6)
+React v18.2.0
+AWS Lambda
+Serverless
+React-DOM
+React-Scripts
+Axios
+NProgress
+Recharts
+```
+---
+
+##### Screenshot of the App:
+
+<img src="public/img_readme/meet.png" style="display: inline-block; margin: 0 auto; max-width: 600px" alt="Meet app photo">
+
+--- 
 
 ## A Note On Privacy.
 The Meetup app requires you to sign in with Google in order to access the data from its Google Calendar. This access apply both ways, as Meetup can also access the user's calendar, Meanwhile it does not and will never be given this functionality. Rest assured, the app does not attempt to do anything with the Google user's information in any way. The app is also currently in the process of being verified, but this may take some time; Google has a lot on their plate.
@@ -82,3 +132,10 @@ Given: The user selected a city.
 When: The user clicks on the city’s upcoming events button.
 
 Then: A chart will list all upcoming events taking place in the city.
+
+---
+
+### Links:
+
+[Github pages](https://gabriel524.github.io/meetup/)
+
