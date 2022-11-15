@@ -325,7 +325,7 @@ input[type="number"] {
   
 }
 
-.data-wrapper {
+.data-wrapper .CitySearch .event_number {
   padding: 20px 20px 35px;
   margin: 10px;
   text-align: center;
