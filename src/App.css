@@ -275,7 +275,7 @@ input[type="number"] {
   border-width: 6px;
   box-sizing: 10px;
   border-style: solid;
-  border-image: linear-gradient(to right, hsl(22, 100%, 56%), hwb(301 22% 1%)) 1;
+  border-image: linear-gradient(to right,hwb(301 22% 1%), hsl(22, 100%, 56%)) 1;
   
 }
 
