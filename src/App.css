@@ -325,7 +325,7 @@ input[type="number"] {
   
 }
 
-/*.data-wrapper {
+.data-wrapper {
   padding: 20px 20px 35px;
   margin: 10px;
   text-align: center;
@@ -333,7 +333,7 @@ input[type="number"] {
   border-radius: 10px;
   box-shadow: 1px 1px 10px rgba(64, 62, 72, 0.789);
 }
-*/
+
 .data-vis-wrapper {
   display: flex;
   align-items: center;

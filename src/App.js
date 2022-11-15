@@ -102,8 +102,7 @@ class App extends Component {
           />
         </div>
 
-        <div className="data-vis-wrapper">
-          <div className="recharts-wrapper">
+        <div className="data-wrapper">
             <h4>Events in each city</h4>
             <EventGenre events={events} />
             <ResponsiveContainer height={400}>
@@ -122,7 +121,7 @@ class App extends Component {
                 <Scatter data={this.getData()} fill="#ff7300" />
               </ScatterChart>
             </ResponsiveContainer>
-          </div>
+      
           <EventList events={events} />
         </div>
         <Row className="events-wrapper"></Row>
