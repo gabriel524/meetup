@@ -88,9 +88,11 @@ class App extends Component {
      const { numberOfEvents, events } = this.state;
     return (
       <div className="App">
-        <div className="title-wrapper">
+        <div>
           <h1 className="title">Meet App</h1>
           <h4>Please choose your nearest city</h4>
+        </div>
+        <div className="title-wrapper">
           <NumberOfEvents
             updateEvents={this.updateEvents}
             numberOfEvents={numberOfEvents}
@@ -103,25 +105,23 @@ class App extends Component {
         </div>
 
         <div className="data-wrapper">
-            <h4>Events in each city</h4>
-            <EventGenre events={events} />
-            <ResponsiveContainer height={400}>
-              <ScatterChart
-                margin={{ top: 20, right: 20, bottom: 20, left: 10 }}
-              >
-                <CartesianGrid />
-                <XAxis type="category" dataKey="city" name="city" />
-                <YAxis
-                  allowDecimals={false}
-                  type="number"
-                  dataKey="number"
-                  name="number of events"
-                />
-                <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-                <Scatter data={this.getData()} fill="#ff7300" />
-              </ScatterChart>
-            </ResponsiveContainer>
-      
+          <h4>Events in each city</h4>
+          <EventGenre events={events} />
+          <ResponsiveContainer height={400}>
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
+              <CartesianGrid />
+              <XAxis type="category" dataKey="city" name="city" />
+              <YAxis
+                allowDecimals={false}
+                type="number"
+                dataKey="number"
+                name="number of events"
+              />
+              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+              <Scatter data={this.getData()} fill="#ff7300" />
+            </ScatterChart>
+          </ResponsiveContainer>
+
           <EventList events={events} />
         </div>
         <Row className="events-wrapper"></Row>

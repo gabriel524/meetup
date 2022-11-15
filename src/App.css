@@ -333,9 +333,7 @@ input[type="number"] {
   padding: 20px 20px 35px;
   margin: 10px;
   text-align: center;
-  border: 1px solid var(--color-white);
   border-radius: 10px;
-  box-shadow: 1px 1px 10px rgba(64, 62, 72, 0.789);
   background-color: white;
 }
 
