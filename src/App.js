@@ -103,27 +103,25 @@ class App extends Component {
         </div>
 
         <div className="data-wrapper">
-            <h4>Events in each city</h4>
-            <EventGenre events={events} />
-            <ResponsiveContainer height={400}>
-              <ScatterChart
-                margin={{ top: 20, right: 20, bottom: 20, left: 10 }}
-              >
-                <CartesianGrid />
-                <XAxis type="category" dataKey="city" name="city" />
-                <YAxis
-                  allowDecimals={false}
-                  type="number"
-                  dataKey="number"
-                  name="number of events"
-                />
-                <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-                <Scatter data={this.getData()} fill="#ff7300" />
-              </ScatterChart>
-            </ResponsiveContainer>
-      
-          <EventList events={events} />
+          <h4>Events in each city</h4>
+          <EventGenre events={events} />
+          <ResponsiveContainer height={400}>
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
+              <CartesianGrid />
+              <XAxis type="category" dataKey="city" name="city" />
+              <YAxis
+                allowDecimals={false}
+                type="number"
+                dataKey="number"
+                name="number of events"
+              />
+              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+              <Scatter data={this.getData()} fill="#ff7300" />
+            </ScatterChart>
+          </ResponsiveContainer>
         </div>
+
+        <EventList events={events} />
         <Row className="events-wrapper"></Row>
         <WelcomeScreen
           showWelcomeScreen={this.state.showWelcomeScreen}
