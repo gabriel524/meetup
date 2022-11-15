@@ -92,7 +92,7 @@ input[type="number"] {
 }
 
 .city:hover,
-.number_input:hover {
+.events-num-input:hover {
   border: 3px solid rgb(255, 154, 12);
 }
 
