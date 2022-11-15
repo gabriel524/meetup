@@ -6,6 +6,7 @@ import NumberOfEvents from "./NumberOfEvents";
 import "./nprogress.css";
 import Row from "react-bootstrap/Row";
 import WelcomeScreen from "./WelcomeScreen";
+import EventGenre from "./EventGenre";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 class App extends Component {
@@ -84,7 +85,7 @@ class App extends Component {
   render() {
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;
-    const { numberOfEvents } = this.state;
+     const { numberOfEvents, events } = this.state;
     return (
       <div className="App">
         <div className="title-wrapper">
@@ -101,9 +102,10 @@ class App extends Component {
           />
         </div>
 
-        <div className="data-wrapper">
+        <div className="data-vis-wrapper">
           <div className="recharts-wrapper">
             <h4>Events in each city</h4>
+            <EventGenre events={events} />
             <ResponsiveContainer height={400}>
               <ScatterChart
                 margin={{ top: 20, right: 20, bottom: 20, left: 10 }}
@@ -121,8 +123,7 @@ class App extends Component {
               </ScatterChart>
             </ResponsiveContainer>
           </div>
-
-          <EventList events={this.state.events} />
+          <EventList events={events} />
         </div>
         <Row className="events-wrapper"></Row>
         <WelcomeScreen
