@@ -8,7 +8,9 @@
   margin-bottom: 10px;
 }
 body {
-  background-color: rgba(7, 200, 194, 0.793);
+  background: linear-gradient(50deg, #ee9032, #f16452, #ec4a77, #a063aa, #7963aa, #4b6eb5,
+   #109aaf, #07b89f, #6bb97f);
+   animation:movinggradient 5s ease infinite;
 }
 
 .App * {
@@ -150,7 +152,7 @@ input[type="number"] {
 }
 
 .btn:active {
-  color: hsl(100, 79%, 52%);
+  color: hsl(296, 79%, 52%);
 }
 
 .btn:active:after {
@@ -172,25 +174,6 @@ input[type="number"] {
   top: 0;
   border-radius: 10px;
 }
-
-.btn {
-  padding: 0.3rem;
-  width: 50%;
-  height: 30px;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
-  border: none;
-  outline: none;
-  color: rgb(42, 42, 42);
-  background: rgb(89, 89, 89);
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  font-size: 1em;
-  font-weight: 400;
-}
-
 
 .suggestions {
 
@@ -431,6 +414,17 @@ input[type="number"] {
     }
 }
 
+@keyframes movinggradient{
+0%{
+  background-position: 0% 50%;
+}
+50%{
+  background-position: 100% 50%;
+}
+100%{
+  background-position: 0% 50%;
+}
+}
 
 @media only screen and (max-width: 760px) {
   .city,
