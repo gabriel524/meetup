@@ -336,7 +336,7 @@ input[type="number"] {
   border: 1px solid var(--color-white);
   border-radius: 10px;
   box-shadow: 1px 1px 10px rgba(64, 62, 72, 0.789);
-  background-color: darkgrey;
+  background-color: white;
 }
 
 .data-vis-wrapper {
