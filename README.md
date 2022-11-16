@@ -61,9 +61,9 @@ Recharts
 ```
 ---
 
-##### Screenshot of the App:
+##### App Screenshot :
 
-<img src="public/img_readme/meet.png" style="display: inline-block; margin: 0 auto; max-width: 600px" alt="Meet app photo">
+<img src="public/readme_img/meet.png" style="display: inline-block; margin: 0 auto; max-width: 600px" alt="Meet app photo">
 
 --- 
 
