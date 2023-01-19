@@ -19,7 +19,7 @@ describe("<NumberOfEvents /> component", () => {
 
     test("render change the number of events in input field by changing state", () => {
       NumberOfEventsWrapper.setState({
-        numOfEvents: 32,
+        numOfEvents: 20,
       }); 
       const eventObject = { target: { value: 6 } };
       NumberOfEventsWrapper.find("#events-num-input").simulate(
