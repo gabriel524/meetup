@@ -39,8 +39,23 @@ class NumberOfEvents extends Component {
       });
     }
 
-    this.props.updateEvents(undefined, inputValue);
+    this.props.updateEvents(inputValue);
   };
+  
+  /*handleInputChanged = (event) => {
+    const value = parseInt(event.target.value);
+    if (value < 1 || value > 250) {
+      this.setState({
+        errorText: "Pick a number between 1 and 250",
+      });
+    } else {
+      this.setState({
+        eventNumber: value,
+        errorText: "",
+      });
+      this.props.updateEventNumber(value);
+    }
+  };*/
 
   render() {
     return (
