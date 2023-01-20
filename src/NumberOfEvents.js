@@ -8,9 +8,10 @@ class NumberOfEvents extends Component {
   };
 
   handleInputChanged = (event) => {
-    const inputValue = event.target.value;
+     console.log(event);
+    let inputValue = event.target.value;
 
-    if (inputValue<1 || inputValue >32) {
+    if (inputValue >1 || inputValue >32) {
       this.setState({
         infoText: "Please select number from 1 to 32",
       });
