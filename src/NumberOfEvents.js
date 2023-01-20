@@ -24,7 +24,7 @@ class NumberOfEvents extends Component {
     }
   };*/
 
-  handleInputChanged = (event) => {
+  /*handleInputChanged = (event) => {
     console.log(event);
     let inputValue = event.target.value;
     if (inputValue < 1 || inputValue > 32) {
@@ -40,22 +40,22 @@ class NumberOfEvents extends Component {
     }
 
     this.props.updateEvents(inputValue);
-  };
-  
-  /*handleInputChanged = (event) => {
-    const value = parseInt(event.target.value);
-    if (value < 1 || value > 250) {
+  };*/
+
+  handleInputChanged = (event) => {
+    const inputValue = parseInt(event.target.value);
+    if (inputValue < 1 || inputValue > 250) {
       this.setState({
-        errorText: "Pick a number between 1 and 250",
+        infoText: "Please enter a number between 1 and 250",
       });
     } else {
       this.setState({
-        eventNumber: value,
-        errorText: "",
+        eventNumber: inputValue,
+        infoText: "",
       });
-      this.props.updateEventNumber(value);
+      this.props.updateEvents(inputValue);
     }
-  };*/
+  };
 
   render() {
     return (
