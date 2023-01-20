@@ -7,11 +7,11 @@ class NumberOfEvents extends Component {
     infoText: "",
   };
 
-  handleInputChanged = (event) => {
-     console.log(event);
+  /*handleInputChanged = (event) => {
+    console.log(event);
     let inputValue = event.target.value;
 
-    if (inputValue >1 || inputValue >32) {
+    if (inputValue > 1 || inputValue > 32) {
       this.setState({
         infoText: "Please select number from 1 to 32",
       });
@@ -22,9 +22,9 @@ class NumberOfEvents extends Component {
         infoText: "",
       });
     }
-  };
-
-  /* handleInputChanged = (event) => {
+  };*/
+  
+  handleInputChanged = (event) => {
     console.log(event);
     let inputValue = event.target.value;
     if (inputValue >1 || inputValue >32) {
@@ -39,8 +39,8 @@ class NumberOfEvents extends Component {
       });
     }
 
-    //this.props.updateEvents(undefined, inputValue);
-  }; */
+    this.props.updateEvents(undefined, inputValue);
+  }; 
 
   render() {
     return (
