@@ -43,18 +43,20 @@ class NumberOfEvents extends Component {
   };*/
 
   handleInputChanged = (event) => {
-    const inputValue = parseInt(event.target.value);
-    if (inputValue < 1 || inputValue > 250) {
+    let inputValue = event.target.value;
+    if (inputValue >= 33 || inputValue <= 0) {
       this.setState({
-        infoText: "Please enter a number between 1 and 250",
+        numberOfEvents: inputValue,
+        infoText: "Please enter a number between 1 - 32.",
       });
     } else {
       this.setState({
-        eventNumber: inputValue,
-        infoText: "",
+        numberOfEvents: event.target.value,
+        infoText: " ",
       });
-      this.props.updateEvents(inputValue);
     }
+
+    //this.props.updateEvents(undefined, inputValue);
   };
 
   render() {
