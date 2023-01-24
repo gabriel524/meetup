@@ -41,7 +41,7 @@ class App extends Component {
     if (!navigator.onLine) {
       this.setState({
         offlineText:
-          "It seems that you're not connected to the internet, your data was loaded from the cache.",
+          "It seems you're not connected to the internet, your data was loaded from the cache.",
       });
     } else {
       this.setState({
@@ -50,42 +50,55 @@ class App extends Component {
     }
   }
 
-  updateEvents = (location, maxNumEvents) => {
-    if (maxNumEvents === undefined) {
-      maxNumEvents = this.state.numberOfEvents;
-    } else this.setState({ numberOfEvents: maxNumEvents });
-    getEvents().then((events) => {
-      const locationEvents =
-        location === "all"
-          ? events
-          : events.filter((event) => event.location === location);
-      const filteredEvents = locationEvents.slice(0, maxNumEvents);
-      this.setState({
-        events: locationEvents.slice(0, maxNumEvents),
-        numberOfEvents: maxNumEvents,
-        event: filteredEvents,
-        locationSelected: location,
-      });
-    });
-  };
-
   componentWillUnmount() {
     this.mounted = false;
   }
- getData = () => {
-    const {locations, events} = this.state;
-    const data = locations.map((location)=>{
-      const number = events.filter((event) => event.location === location).length
-      const city = location.split(', ').shift()
-      return {city, number};
-    })
+
+  updateEvents = (location, inputNumber) => {
+    const { numberOfEvents, seletedLocation } = this.state;
+    if (location) {
+      getEvents().then((events) => {
+        const locationEvents =
+          location === "all"
+            ? events
+            : events.filter((event) => event.location === location);
+        const eventsToShow = locationEvents.slice(0, numberOfEvents);
+        this.setState({
+          events: eventsToShow,
+          seletedLocation: location,
+        });
+      });
+    } else {
+      getEvents().then((events) => {
+        const locationEvents =
+          seletedLocation === "all"
+            ? events
+            : events.filter((event) => event.location === seletedLocation);
+        const eventsToShow = locationEvents.slice(0, inputNumber);
+        this.setState({
+          events: eventsToShow,
+          numberOfEvents: inputNumber,
+        });
+      });
+    }
+  };
+
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
+      const city = location.split(", ").shift();
+      return { city, number };
+    });
     return data;
   };
 
   render() {
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;
-     const { numberOfEvents, events } = this.state;
+    const { numberOfEvents, events } = this.state;
     return (
       <div className="App">
         <div>

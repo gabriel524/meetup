@@ -21,7 +21,7 @@ class NumberOfEvents extends Component {
       });
     }
 
-    //this.props.updateEvents(undefined, inputValue);
+    this.props.updateEvents(undefined, inputValue);
   };
 
   render() {
@@ -78,5 +78,33 @@ export default NumberOfEvents;
     }
 
     this.props.updateEvents(inputValue);
-  };*/
+  };
+  
+  
+
+
+   handleInputChanged = (e)=>{
+    const inputValue=e.target.value;
+    
+    if (inputValue<1 || inputValue>32) {
+      this.setState({
+        infoText: 'Please select number from 1 to 32'
+      })
+      
+    } else {
+      this.props.updateEvents(null, inputValue);
+      this.setState({
+        eventCount: inputValue,
+        infoText:''
+      })
+    }
+  }
+  
+  
+  
+  
+  */
+
+
+
 
