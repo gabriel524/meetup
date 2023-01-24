@@ -8,7 +8,15 @@ import Row from "react-bootstrap/Row";
 import WelcomeScreen from "./WelcomeScreen";
 import EventGenre from "./EventGenre";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 class App extends Component {
   state = {
     events: [],
@@ -41,7 +49,7 @@ class App extends Component {
     if (!navigator.onLine) {
       this.setState({
         offlineText:
-          "It seems you're not connected to the internet, your data was loaded from the cache.",
+          "It seems that you're not connected to the internet, your data was loaded from the cache.",
       });
     } else {
       this.setState({
